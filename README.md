@@ -203,8 +203,7 @@ Boston-Housing-Price-Prediction
 ├── images/
 │   ├── correlation_heatmap.png
 │   ├── ridge_actual_vs_predicted.png
-│   ├── lasso_actual_vs_predicted.png
-│   └── coefficient_comparison.png
+│   └── lasso_actual_vs_predicted.png
 │
 └── README.md
 ```
