@@ -1,53 +1,226 @@
-# Boston Housing Price Prediction using Ridge and Lasso Regression
+# 🏡 Boston Housing Price Prediction
 
-## Overview
-The Boston Housing dataset contains multiple correlated features that can negatively affect the stability and interpretability of linear regression models. This project applies Ridge and Lasso Regression to handle multicollinearity and improve model generalization when predicting housing prices.
+> **Predicting housing prices using Ridge and Lasso Regression to address multicollinearity and improve model generalization.**
 
-## Problem Statement
-Multicollinearity among features in the Boston Housing dataset can lead to unstable coefficients and poor generalization in traditional linear regression models.
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikitlearn)
+![Statsmodels](https://img.shields.io/badge/Statsmodels-005571?style=for-the-badge)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge)
+![Seaborn](https://img.shields.io/badge/Seaborn-4C72B0?style=for-the-badge)
 
-## Objectives
-- Identify and handle multicollinearity among housing features  
-- Compare Ridge and Lasso Regression performance  
-- Evaluate model generalization using unseen test data  
-- Interpret feature importance in housing price prediction  
+---
 
-## Dataset
-- **Source:** Boston Housing Dataset  
-- **Target Variable:** Median value of owner-occupied homes (MEDV)  
-- **Features:** Crime rate, number of rooms, pollution level, tax rate, distance to city center, and others  
+# 📌 Project Overview
 
-## Methodology
-1. **Data Splitting**
-   - Train, validation, and test sets were created to ensure unbiased evaluation.
-2. **Multicollinearity Analysis**
-   - Variance Inflation Factor (VIF) and correlation analysis were used.
-   - Highly correlated features were reduced to improve model stability.
-3. **Modeling**
-   - Ridge Regression and Lasso Regression were implemented.
-   - Multiple regularization strengths (alpha values) were tested.
-4. **Model Evaluation**
-   - RMSE, MAE, MAPE, and R² metrics were used for performance comparison.
+Accurate house price prediction is essential for property valuation, investment decisions, and urban planning. However, highly correlated features can reduce the stability and interpretability of traditional Linear Regression models.
 
-## Results
-- Ridge Regression achieved stable performance but showed lower generalization on test data.
-- Lasso Regression outperformed Ridge on unseen data with a higher R² score (64.18%).
-- Lasso also performed feature selection by shrinking less important coefficients to zero.
+This project compares **Ridge Regression** and **Lasso Regression** to mitigate multicollinearity, improve prediction performance, and identify the most influential factors affecting housing prices.
 
-## Conclusion
-Lasso Regression proved to be more effective in predicting unseen housing prices, offering better generalization and model interpretability compared to Ridge Regression.
+---
 
-## Tools & Libraries
+# 🎯 Business Problem
+
+Traditional Linear Regression models often struggle with **multicollinearity**, where highly correlated features produce unstable coefficients and reduce prediction performance on unseen data.
+
+A more robust predictive model is required to improve generalization while maintaining model interpretability for real estate price prediction.
+
+---
+
+# 🎯 Project Goals
+
+- Predict housing prices using regularized regression models.
+- Detect and mitigate multicollinearity using Variance Inflation Factor (VIF).
+- Compare Ridge Regression and Lasso Regression performance.
+- Evaluate model generalization using unseen test data.
+- Identify the most influential housing features.
+- Recommend the most suitable regression model for house price prediction.
+
+---
+
+# 📂 Dataset
+
+**Boston Housing Dataset**
+
+The dataset contains housing information collected from suburbs of Boston.
+
+### Target Variable
+
+- **MEDV** (Median value of owner-occupied homes)
+
+### Features
+
+- Crime Rate
+- Residential Land Zoning
+- Industrial Area
+- Charles River Proximity
+- Nitric Oxide Concentration
+- Average Number of Rooms
+- House Age
+- Distance to Employment Centers
+- Property Tax Rate
+- Student-Teacher Ratio
+- Lower Status Population
+- Other socioeconomic indicators
+
+---
+
+# 🛠️ Tools & Technologies
+
 - Python
-- Pandas, NumPy
-- Scikit-learn
+- Pandas
+- NumPy
+- Scikit-Learn
 - Statsmodels
-- Matplotlib & Seaborn
+- Matplotlib
+- Seaborn
+- Jupyter Notebook
 
-## Key Takeaways
-- Regularization is essential when dealing with multicollinearity.
-- Lasso Regression provides both predictive power and feature selection.
-- Model evaluation on unseen data is critical for reliable performance assessment.
+---
 
-## Author
-Jessica Agnesia Tataung
+# 🔍 Analysis Techniques
+
+- Data Splitting
+- Exploratory Data Analysis (EDA)
+- Correlation Analysis
+- Variance Inflation Factor (VIF)
+- Feature Selection
+- Ridge Regression
+- Lasso Regression
+- Hyperparameter Tuning
+- Model Evaluation
+
+---
+
+# 🏗️ Project Workflow
+
+```text
+Raw Dataset
+      │
+      ▼
+Train / Validation / Test Split
+      │
+      ▼
+Correlation Analysis
+      │
+      ▼
+Variance Inflation Factor (VIF)
+      │
+      ▼
+Feature Selection
+      │
+      ▼
+Ridge Regression
+      │
+      ▼
+Lasso Regression
+      │
+      ▼
+Hyperparameter Tuning
+      │
+      ▼
+Model Evaluation
+      │
+      ▼
+Model Comparison
+      │
+      ▼
+Business Recommendation
+```
+
+---
+
+# 📊 Model Performance
+
+| Metric | Ridge | Lasso |
+|---------|-------:|-------:|
+| RMSE (Test) | 5.159 | **5.125** |
+| MAE (Test) | **3.244** | 3.398 |
+| MAPE (Test) | **17.62%** | 17.86% |
+| R² (Test) | 58.13% | **64.18%** |
+
+---
+
+# 🔍 Key Findings
+
+- Strong multicollinearity was identified among several housing features.
+- Removing redundant features improved model stability.
+- Ridge Regression produced stable coefficients for correlated variables.
+- Lasso Regression automatically selected the most important features by shrinking less influential coefficients to zero.
+- Lasso Regression achieved the highest test R² score (64.18%), indicating better generalization on unseen data.
+
+---
+
+# 💡 Business Recommendations
+
+| Recommendation | Business Value |
+|---------------|----------------|
+| Deploy Lasso Regression for house price prediction. | Provides better predictive performance on unseen housing data. |
+| Apply feature selection before model training. | Reduces model complexity and improves interpretability. |
+| Monitor highly correlated variables during feature engineering. | Prevents unstable coefficients and improves model reliability. |
+| Prioritize influential housing characteristics such as room count, accessibility, and environmental quality. | Supports more accurate property valuation and pricing strategies. |
+| Periodically retrain the model using updated housing market data. | Maintains prediction accuracy as market conditions change. |
+
+---
+
+# 🚀 Business Impact
+
+This project demonstrates how machine learning can support:
+
+- Accurate property valuation.
+- Better real estate investment decisions.
+- Explainable housing price prediction.
+- Robust predictive modeling under multicollinearity.
+- Data-driven decision making for real estate analytics.
+
+---
+
+# 🧠 Skills Demonstrated
+
+- Machine Learning
+- Regression Modeling
+- Ridge Regression
+- Lasso Regression
+- Multicollinearity Analysis
+- Variance Inflation Factor (VIF)
+- Feature Selection
+- Hyperparameter Tuning
+- Model Evaluation
+- Statistical Analysis
+- Data Visualization
+
+---
+
+# 📁 Repository Structure
+
+```text
+Boston-Housing-Price-Prediction
+│
+├── notebook/
+│   └── Boston_Housing_Price_Prediction.ipynb
+│
+├── images/
+│   ├── correlation_heatmap.png
+│   ├── ridge_actual_vs_predicted.png
+│   ├── lasso_actual_vs_predicted.png
+│   └── coefficient_comparison.png
+│
+└── README.md
+```
+
+---
+
+# 👩‍💻 Author
+
+**Jessica Agnesia Tataung**
+
+- LinkedIn: https://www.linkedin.com/in/jessicaagnesiat/
+
+🌐 Portfolio Website
+
+https://jessicaagnesiat.github.io/portofolio-data-scientist/
+
+---
+
+⭐ If you found this project useful, feel free to give it a star!
