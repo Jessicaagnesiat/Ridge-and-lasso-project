@@ -220,7 +220,3 @@ Boston-Housing-Price-Prediction
 🌐 Portfolio Website
 
 https://jessicaagnesiat.github.io/portofolio-data-scientist/
-
----
-
-⭐ If you found this project useful, feel free to give it a star!
